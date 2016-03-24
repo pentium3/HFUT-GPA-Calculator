@@ -1,0 +1,13 @@
+D:\GitHub\GPAA\GPAA\bin\Release\GPAA.exe.config
+D:\GitHub\GPAA\GPAA\bin\Release\GPAA.exe
+D:\GitHub\GPAA\GPAA\bin\Release\GPAA.pdb
+D:\GitHub\GPAA\GPAA\bin\Release\HtmlAgilityPack.dll
+D:\GitHub\GPAA\GPAA\bin\Release\Newtonsoft.Json.dll
+D:\GitHub\GPAA\GPAA\bin\Release\HtmlAgilityPack.pdb
+D:\GitHub\GPAA\GPAA\bin\Release\HtmlAgilityPack.xml
+D:\GitHub\GPAA\GPAA\bin\Release\Newtonsoft.Json.xml
+D:\GitHub\GPAA\GPAA\obj\Release\GPAA.Form1.resources
+D:\GitHub\GPAA\GPAA\obj\Release\GPAA.Properties.Resources.resources
+D:\GitHub\GPAA\GPAA\obj\Release\GPAA.csproj.GenerateResource.Cache
+D:\GitHub\GPAA\GPAA\obj\Release\GPAA.exe
+D:\GitHub\GPAA\GPAA\obj\Release\GPAA.pdb

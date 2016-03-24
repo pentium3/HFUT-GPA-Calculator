@@ -55,6 +55,8 @@
             this.button6 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -68,7 +70,7 @@
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(673, 614);
+            this.dataGridView1.Size = new System.Drawing.Size(673, 644);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -128,7 +130,7 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(691, 519);
+            this.webBrowser1.Location = new System.Drawing.Point(691, 541);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(211, 115);
@@ -139,7 +141,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(705, 411);
+            this.label1.Location = new System.Drawing.Point(705, 325);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(0, 13);
             this.label1.TabIndex = 11;
@@ -157,7 +159,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(705, 436);
+            this.label2.Location = new System.Drawing.Point(705, 350);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 13);
             this.label2.TabIndex = 13;
@@ -165,7 +167,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(705, 460);
+            this.label3.Location = new System.Drawing.Point(705, 374);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 13);
             this.label3.TabIndex = 14;
@@ -173,7 +175,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(705, 486);
+            this.label4.Location = new System.Drawing.Point(705, 400);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(0, 13);
             this.label4.TabIndex = 15;
@@ -193,8 +195,8 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(211, 69);
             this.label5.TabIndex = 18;
-            this.label5.Text = "由于不同科目计算权重不一样，WES算法结果与实际认证结果会有细微差异（一般情况下认证出来会高一些）。更精确的结果请参考https://www.wes.org/ca" +
-    "lculator/igpa.asp";
+            this.label5.Text = "由于不同科目计算权重不一样，WES算法结果与实际认证结果会有细微差异。更精确的结果请参考https://www.wes.org/calculator/igpa.a" +
+    "sp";
             this.label5.Visible = false;
             // 
             // label7
@@ -328,11 +330,33 @@
             this.groupBox2.Text = "Control Panel";
             this.groupBox2.Visible = false;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(702, 429);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(185, 28);
+            this.button7.TabIndex = 31;
+            this.button7.Text = "从文件导入规则";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Visible = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(702, 477);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(0, 13);
+            this.label15.TabIndex = 33;
+            this.label15.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 637);
+            this.ClientSize = new System.Drawing.Size(913, 668);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
@@ -385,6 +409,8 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label15;
     }
 }
 

@@ -22,3 +22,5 @@ D:\GitHub\GPAA\GPAA\obj\Debug\GPAA.csprojResolveAssemblyReference.cache
 D:\GitHub\GPAA\GPAA\obj\Debug\GPAA.Form1.resources
 D:\GitHub\GPAA\GPAA\obj\Debug\GPAA.Properties.Resources.resources
 D:\GitHub\GPAA\GPAA\obj\Debug\GPAA.csproj.GenerateResource.Cache
+D:\GitHub\GPAA\GPAA\bin\Debug\Newtonsoft.Json.dll
+D:\GitHub\GPAA\GPAA\bin\Debug\Newtonsoft.Json.xml

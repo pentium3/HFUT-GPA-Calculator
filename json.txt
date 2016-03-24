@@ -1,0 +1,18 @@
+[
+    {
+        "level": 4.0,
+        "grade": 95
+    },
+    {
+        "level": 2.0,
+        "grade": 65
+    },
+    {
+        "level": 3.0,
+        "grade": 75
+    },
+    {
+        "level": 1.0,
+	"grade": 60
+    }
+]

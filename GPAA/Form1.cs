@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HtmlAgilityPack;
 using System.IO;
+using Newtonsoft.Json.Linq;
+using System.Web;
+using System.Web.Script.Serialization;
 
 namespace GPAA
 {
@@ -24,8 +27,38 @@ namespace GPAA
         List<sbj> subject = new List<sbj>();
         double[] gpaw = new double[1010];
         double[] gpah = new double[1010];
+        double[] gpac = new double[1010];
         int num_sbj;
         bool hfcampus = false;
+
+        private double CalcGPAfromjson(String str)
+        {
+            JavaScriptSerializer ser = new JavaScriptSerializer();
+            List<custom_GPA> gpalist = new List<custom_GPA>();
+            gpalist = ser.Deserialize<List<custom_GPA>>(str);
+            //Console.WriteLine(gpalist.Count);
+            //for (int i = 0; i < gpalist.Count; i++)
+            //    Console.WriteLine(gpalist[i].grade.ToString() + gpalist[i].level.ToString());
+
+            double tot_Credit = 0;
+            double tot_GPAc = 0;
+            for (int i = 0; i < num_sbj; i++)
+            {
+                tot_Credit += subject[i].Credit;
+                double lv = 0.0;
+                for(int j=0;j<gpalist.Count;j++)
+                {
+                    if ((subject[i].Grade >= gpalist[j].grade) && (gpalist[j].level > lv))
+                        lv = gpalist[j].level;
+                }
+                gpac[i] = lv * subject[i].Credit;
+                //Console.WriteLine(gpac[i].ToString() + " " + lv.ToString() + " " + subject[i].Credit.ToString());
+                tot_GPAc += gpac[i];
+            }
+            tot_GPAc = tot_GPAc / tot_Credit;
+            return tot_GPAc;
+        }
+
 
         public Form1()
         {
@@ -230,6 +263,8 @@ namespace GPAA
 
             label6.Visible = false;
             label5.Visible = true;
+            label15.Visible = true;
+            button7.Visible = true;
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -247,8 +282,31 @@ namespace GPAA
             groupBox1.Visible = false;
             groupBox2.Visible = true;
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            String fName;
+            OpenFileDialog openfile = new OpenFileDialog();
+            openfile.InitialDirectory = "C:\\";
+            openfile.Filter = "ConfigFile|*.txt";
+            openfile.RestoreDirectory = true;
+            openfile.FilterIndex = 1;
+            if(openfile.ShowDialog()==DialogResult.OK)
+            {
+                fName = openfile.FileName;
+                String jsonstr = File.ReadAllText(fName);
+                //label15.Text = jsonstr;
+                double ans = CalcGPAfromjson(jsonstr);
+                label15.Text = "自定义GPA算法：" + ans.ToString();
+            }
+        }
     }
 
+    class custom_GPA
+    {
+        public double level { get; set; }
+        public double grade { get; set; }
+    }
 
     class sbj
     {
